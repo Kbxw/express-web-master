@@ -1,0 +1,24 @@
+<html lang="en">
+<%- include("./partials/head.ejs") %>
+
+<body>
+  <%- include("./partials/nav.ejs") %>
+
+  <div class="blogs content">
+    <h2>Todas las tortugas</h2>
+  <ol>
+    <% if (turtles.length > 0) { %>
+      <% turtles.forEach(turtle => { %>
+
+        <li><b><%= turtle.name %></b> es del tipo <u><%= turtle.type %></u>.</li>
+
+      <% }) %>
+    <% } else { %>
+      <p>¡No hay tortugas!</p>
+    <% } %>
+  </ol>
+  </div>
+
+  <%- include("./partials/footer.ejs") %>
+</body>
+</html>

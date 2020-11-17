@@ -1,0 +1,25 @@
+<html lang="en">
+<%- include("./partials/head.ejs") %>
+
+<body>
+  <%- include("./partials/nav.ejs") %>
+
+  <div class="blogs content">
+        <ul class="imgFlex">
+    <% if (turtles.length > 0) { %>
+      <% turtles.forEach(turtle => { %>
+          
+        <li class="imgFlex">
+            <img title="Imágen de <%= turtle.name %>, una tortuga del tipo <%= turtle.type %>." class="imgFlex" src="<%= turtle.image %>">
+        </li>
+
+      <% }) %>
+    <% } else { %>
+      <p>¡No hay imagenes!</p>
+    <% } %>
+    </ul>
+  </div>
+
+  <%- include("./partials/footer.ejs") %>
+</body>
+</html>
